@@ -21,6 +21,11 @@ let port = 3000
 app.listen(port)
 console.log("API ligada na porta: " + port)
 
+app.get('', async (req, res) => {
+    res.status(200).json({
+        message: 'oi'
+    })
+})
 
 app.get('/api/v1/:name', async (req, res) => {
     // If the path parameter is not specified, we will return a status 400.
