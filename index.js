@@ -16,15 +16,21 @@ Returns middleware that only parses urlencoded bodies and only looks at
 requests where the Content-Type header matches the type option. 
 */
 app.use(express.urlencoded({ extended: false }));
+app.set('json spaces', 2);
 
 let port = 3000
 app.listen(port)
 console.log("API ligada na porta: " + port)
 
 app.get('', async (req, res) => {
-    res.status(200).json({
-        message: 'oi'
-    })
+    res.status(200).send('Looking for the <a href="https://dank-api.glitch.me/api/v1" >bridge</a>?')
+})
+
+app.get('/api/v1', async (req, res) => {
+  res.status(502).json({
+    message: 'Bad Gateway',
+    status:  502
+  })
 })
 
 app.get('/api/v1/:name', async (req, res) => {
