@@ -18,6 +18,19 @@ setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/api/ping`);
 }, 270000);
 
+app.get("/", (request, response) => {
+  response
+    .status(200)
+    .send(
+      'Looking for the <a href="https://dank-api.glitch.me/api/">API bridge</a>?'
+    );
+});
+
+app.get("/api", (request, response) => {
+  response
+    .status(200)
+    .send('<p>Choose a version</p> <p><ui><li><a href="https://dank-api.glitch.me/api/v1">V1</a></li></ui></p>');
+});
 /*
 Returns middleware that only parses json and only looks at
 requests where the Content-Type header matches the type option. 

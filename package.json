@@ -17,7 +17,8 @@
     "jimp": "^0.10.3",
     "moment": "^2.25.3",
     "moment-timezone": "^0.5.27",
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "enmap": "^5.2.4"
   },
   "engines": {
     "node": "^12.16.3",
